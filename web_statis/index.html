@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CV — M. Syifaulqulub Hakim 238801004</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — M. Syifaulqulub Hakim ganteng|2388010049</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <style>
     :root {
       --bg: #0d0d0d;
@@ -15,8 +17,19 @@
       --text: #f0f0f0;
       --muted: #888;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: var(--bg);
       color: var(--text);
@@ -36,7 +49,11 @@
       opacity: 0.4;
     }
 
-    .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
     /* HEADER */
     header {
@@ -57,6 +74,7 @@
       text-transform: uppercase;
       margin-bottom: 1rem;
     }
+
     h1 {
       font-family: 'Syne', sans-serif;
       font-size: clamp(2.5rem, 7vw, 5rem);
@@ -65,7 +83,11 @@
       letter-spacing: -0.03em;
       margin-bottom: 0.5rem;
     }
-    h1 span { color: var(--accent); }
+
+    h1 span {
+      color: var(--accent);
+    }
+
     .subtitle {
       color: var(--muted);
       font-size: 0.85rem;
@@ -82,11 +104,23 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
-    nav a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    nav a:hover { color: var(--accent); }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
 
     /* SECTION */
-    section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
     .section-label {
       font-size: 0.65rem;
       letter-spacing: 0.2em;
@@ -97,6 +131,7 @@
       align-items: center;
       gap: 0.75rem;
     }
+
     .section-label::after {
       content: '';
       flex: 1;
@@ -111,7 +146,11 @@
       color: #ccc;
       max-width: 680px;
     }
-    .about-text strong { color: var(--accent); font-weight: 500; }
+
+    .about-text strong {
+      color: var(--accent);
+      font-weight: 500;
+    }
 
     /* SKILLS GRID */
     .skills-grid {
@@ -121,12 +160,17 @@
       background: var(--border);
       border: 1px solid var(--border);
     }
+
     .skill-card {
       background: var(--surface);
       padding: 1.25rem;
       transition: background 0.2s;
     }
-    .skill-card:hover { background: #1e1e1e; }
+
+    .skill-card:hover {
+      background: #1e1e1e;
+    }
+
     .skill-category {
       font-size: 0.6rem;
       letter-spacing: 0.2em;
@@ -134,11 +178,13 @@
       color: var(--muted);
       margin-bottom: 0.5rem;
     }
+
     .skill-name {
       font-family: 'Syne', sans-serif;
       font-size: 0.95rem;
       font-weight: 700;
     }
+
     .skill-bar {
       height: 2px;
       background: var(--border);
@@ -146,13 +192,19 @@
       border-radius: 1px;
       overflow: hidden;
     }
+
     .skill-bar-fill {
       height: 100%;
       background: var(--accent);
       border-radius: 1px;
       animation: fillBar 1.5s ease forwards;
     }
-    @keyframes fillBar { from { width: 0; } }
+
+    @keyframes fillBar {
+      from {
+        width: 0;
+      }
+    }
 
     /* EXPERIENCE */
     .exp-item {
@@ -162,30 +214,61 @@
       padding: 1.5rem 0;
       border-bottom: 1px solid var(--border);
     }
-    .exp-item:last-child { border-bottom: none; }
-    .exp-period { color: var(--muted); font-size: 0.75rem; line-height: 1.5; }
+
+    .exp-item:last-child {
+      border-bottom: none;
+    }
+
+    .exp-period {
+      color: var(--muted);
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
     .exp-title {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
       font-size: 1rem;
       margin-bottom: 0.25rem;
     }
-    .exp-company { color: var(--accent2); font-size: 0.8rem; margin-bottom: 0.5rem; }
-    .exp-desc { color: var(--muted); font-size: 0.8rem; line-height: 1.7; }
+
+    .exp-company {
+      color: var(--accent2);
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-desc {
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.7;
+    }
 
     /* EDUCATION */
     .edu-item {
       padding: 1.25rem 0;
       border-bottom: 1px solid var(--border);
     }
-    .edu-item:last-child { border-bottom: none; }
+
+    .edu-item:last-child {
+      border-bottom: none;
+    }
+
     .edu-degree {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
       margin-bottom: 0.25rem;
     }
-    .edu-school { color: var(--accent); font-size: 0.85rem; }
-    .edu-year { color: var(--muted); font-size: 0.75rem; }
+
+    .edu-school {
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    .edu-year {
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
 
     /* CONTACT */
     .contact-grid {
@@ -193,6 +276,7 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
+
     .contact-item {
       display: flex;
       align-items: center;
@@ -204,11 +288,15 @@
       font-size: 0.8rem;
       transition: all 0.2s;
     }
+
     .contact-item:hover {
       border-color: var(--accent);
       color: var(--accent);
     }
-    .contact-item span { color: var(--accent); }
+
+    .contact-item span {
+      color: var(--accent);
+    }
 
     /* FOOTER */
     footer {
@@ -219,6 +307,7 @@
       font-size: 0.7rem;
       color: var(--muted);
     }
+
     .status-dot {
       display: inline-block;
       width: 6px;
@@ -228,146 +317,197 @@
       margin-right: 0.4rem;
       animation: pulse 2s infinite;
     }
+
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
     }
 
     /* ANIMATE ON LOAD */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    header, nav, section {
+
+    header,
+    nav,
+    section {
       animation: fadeUp 0.6s ease both;
     }
-    section:nth-child(2) { animation-delay: 0.1s; }
-    section:nth-child(3) { animation-delay: 0.2s; }
-    section:nth-child(4) { animation-delay: 0.3s; }
-    section:nth-child(5) { animation-delay: 0.4s; }
+
+    section:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    section:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    section:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    section:nth-child(5) {
+      animation-delay: 0.4s;
+    }
   </style>
 </head>
+
 <body>
-<div class="container">
-  <header>
-    <div class="tag">Available for Work</div>
-    <h1>M. Syifaulqulub<br/><span>Hakim</span></h1>
-    <p class="subtitle">Full-Stack Developer &amp; Cloud Infrastructure Engineer</p>
-  </header>
+  <div class="container">
+    <header>
+      <div class="tag">Available for Work</div>
+      <h1>M. Syifaulqulub<br /><span>Hakim</span></h1>
+      <p class="subtitle">Full-Stack Developer &amp; Cloud Infrastructure Engineer</p>
+    </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <section id="about">
-    <div class="section-label">About</div>
-    <p class="about-text">
-      Mahasiswa <strong>Teknik Informatika</strong> yang passionate di bidang
-      <strong>Cloud Computing</strong>, DevOps, dan pengembangan aplikasi web.
-      Berpengalaman dalam membangun infrastruktur CI/CD pipeline menggunakan
-      <strong>GitHub Actions</strong>, Docker, dan AWS EC2. Selalu antusias
-      dalam mengeksplorasi teknologi baru dan memecahkan masalah teknis yang kompleks.
-    </p>
-  </section>
+    <section id="about">
+      <div class="section-label">About</div>
+      <p class="about-text">
+        Mahasiswa <strong>Teknik Informatika</strong> yang passionate di bidang
+        <strong>Cloud Computing</strong>, DevOps, dan pengembangan aplikasi web.
+        Berpengalaman dalam membangun infrastruktur CI/CD pipeline menggunakan
+        <strong>GitHub Actions</strong>, Docker, dan AWS EC2. Selalu antusias
+        dalam mengeksplorasi teknologi baru dan memecahkan masalah teknis yang kompleks.
+      </p>
+    </section>
 
-  <section id="skills">
-    <div class="section-label">Skills</div>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-category">Backend</div>
-        <div class="skill-name">PHP / Laravel</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+    <section id="skills">
+      <div class="section-label">Skills</div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-category">Backend</div>
+          <div class="skill-name">PHP / Laravel</div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width:85%"></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-category">Backend</div>
+          <div class="skill-name">Node.js</div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width:75%"></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-category">DevOps</div>
+          <div class="skill-name">Docker &amp; Compose</div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width:80%"></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-category">DevOps</div>
+          <div class="skill-name">GitHub Actions</div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width:78%"></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-category">Cloud</div>
+          <div class="skill-name">AWS EC2</div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width:72%"></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-category">Database</div>
+          <div class="skill-name">MariaDB / MySQL</div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width:82%"></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-category">Frontend</div>
+          <div class="skill-name">HTML / CSS / JS</div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width:88%"></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-category">OS</div>
+          <div class="skill-name">Linux / Ubuntu</div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" style="width:76%"></div>
+          </div>
+        </div>
       </div>
-      <div class="skill-card">
-        <div class="skill-category">Backend</div>
-        <div class="skill-name">Node.js</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-category">DevOps</div>
-        <div class="skill-name">Docker &amp; Compose</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-category">DevOps</div>
-        <div class="skill-name">GitHub Actions</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:78%"></div></div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-category">Cloud</div>
-        <div class="skill-name">AWS EC2</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:72%"></div></div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-category">Database</div>
-        <div class="skill-name">MariaDB / MySQL</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-category">Frontend</div>
-        <div class="skill-name">HTML / CSS / JS</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-category">OS</div>
-        <div class="skill-name">Linux / Ubuntu</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width:76%"></div></div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="experience">
-    <div class="section-label">Experience</div>
-    <div class="exp-item">
-      <div class="exp-period">2024 – Now</div>
-      <div>
-        <div class="exp-title">Cloud Infrastructure Engineer</div>
-        <div class="exp-company">Proyek Akademik — UIN SSC</div>
-        <div class="exp-desc">Merancang dan mengimplementasikan CI/CD pipeline menggunakan GitHub Actions. Deploy aplikasi web statis dan dinamis ke AWS EC2 menggunakan Docker Compose dengan zero-downtime deployment.</div>
+    <section id="experience">
+      <div class="section-label">Experience</div>
+      <div class="exp-item">
+        <div class="exp-period">2024 – Now</div>
+        <div>
+          <div class="exp-title">Cloud Infrastructure Engineer</div>
+          <div class="exp-company">Proyek Akademik — UIN SSC</div>
+          <div class="exp-desc">Merancang dan mengimplementasikan CI/CD pipeline menggunakan GitHub Actions. Deploy
+            aplikasi web statis dan dinamis ke AWS EC2 menggunakan Docker Compose dengan zero-downtime deployment.</div>
+        </div>
       </div>
-    </div>
-    <div class="exp-item">
-      <div class="exp-period">2023 – 2024</div>
-      <div>
-        <div class="exp-title">Web Developer (Freelance)</div>
-        <div class="exp-company">Independen</div>
-        <div class="exp-desc">Membangun aplikasi web full-stack menggunakan PHP dan MySQL. Mengelola hosting dan domain untuk klien UMKM lokal.</div>
+      <div class="exp-item">
+        <div class="exp-period">2023 – 2024</div>
+        <div>
+          <div class="exp-title">Web Developer (Freelance)</div>
+          <div class="exp-company">Independen</div>
+          <div class="exp-desc">Membangun aplikasi web full-stack menggunakan PHP dan MySQL. Mengelola hosting dan
+            domain untuk klien UMKM lokal.</div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="education">
-    <div class="section-label">Education</div>
-    <div class="edu-item">
-      <div class="edu-degree">S1 Teknik Informatika</div>
-      <div class="edu-school">UIN Sunan Gunung Djati Bandung</div>
-      <div class="edu-year">2022 – Sekarang</div>
-    </div>
-    <div class="edu-item">
-      <div class="edu-degree">SMA / Sederajat</div>
-      <div class="edu-school">Kota Cirebon</div>
-      <div class="edu-year">2019 – 2022</div>
-    </div>
-  </section>
+    <section id="education">
+      <div class="section-label">Education</div>
+      <div class="edu-item">
+        <div class="edu-degree">S1 Teknik Informatika</div>
+        <div class="edu-school">UIN Sunan Gunung Djati Bandung</div>
+        <div class="edu-year">2022 – Sekarang</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">SMA / Sederajat</div>
+        <div class="edu-school">Kota Cirebon</div>
+        <div class="edu-year">2019 – 2022</div>
+      </div>
+    </section>
 
-  <section id="contact">
-    <div class="section-label">Contact</div>
-    <div class="contact-grid">
-      <a class="contact-item" href="mailto:hakim@example.com"><span>@</span> hakim@example.com</a>
-      <a class="contact-item" href="https://github.com/msyifaulqulubhakim-bot" target="_blank"><span>⌥</span> GitHub</a>
-      <a class="contact-item" href="#"><span>◈</span> LinkedIn</a>
-      <a class="contact-item" href="#"><span>◉</span> 13.251.225.181</a>
-    </div>
-  </section>
+    <section id="contact">
+      <div class="section-label">Contact</div>
+      <div class="contact-grid">
+        <a class="contact-item" href="mailto:hakim@example.com"><span>@</span> hakim@example.com</a>
+        <a class="contact-item" href="https://github.com/msyifaulqulubhakim-bot" target="_blank"><span>⌥</span>
+          GitHub</a>
+        <a class="contact-item" href="#"><span>◈</span> LinkedIn</a>
+        <a class="contact-item" href="#"><span>◉</span> 13.251.225.181</a>
+      </div>
+    </section>
 
-  <footer>
-    <div><span class="status-dot"></span>Deployed via GitHub Actions → Docker → AWS EC2</div>
-    <div>© 2025 M. Syifaulqulub Hakim</div>
-  </footer>
-</div>
+    <footer>
+      <div><span class="status-dot"></span>Deployed via GitHub Actions → Docker → AWS EC2</div>
+      <div>© 2025 M. Syifaulqulub Hakim</div>
+    </footer>
+  </div>
 </body>
+
 </html>

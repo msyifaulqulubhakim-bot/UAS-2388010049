@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hakim's News — Info Pendakian & Vulkanologi</title>
+  <title>Gunung News — Info Pendakian & Vulkanologi</title>
   <!-- Google Fonts: Playfair Display (Editorial) & Outfit (Modern Sans) -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
@@ -185,7 +185,7 @@
 
 <div class="hero-banner">
   <div class="hero-content">
-    <h1 class="hero-title">Gunung Hakim</h1>
+    <h1 class="hero-title">Gunung News</h1>
     <p class="hero-subtitle">Portal Informasi Terpercaya Seputar Pendakian, Eksplorasi Alam, dan Vulkanologi Indonesia</p>
   </div>
 </div>
