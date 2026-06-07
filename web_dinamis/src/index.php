@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$host = getenv('DB_HOST') ?: 'db';
+$host = getenv('DATABASE_HOST') ?: (getenv('DB_HOST') ?: 'db');
 $dbname = getenv('DB_NAME') ?: 'app_db';
 $user = getenv('DB_USER') ?: 'appuser';
 $pass = getenv('DB_PASS') ?: 'apppassword';
@@ -21,7 +21,7 @@ try {
 // Handle logout
 if (isset($_GET['logout'])) {
     session_destroy();
-    header('Location: /');
+    header('Location: /app/');
     exit;
 }
 
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         if ($user_row && md5($password) === $user_row['password']) {
             $_SESSION['user'] = $user_row['username'];
             $_SESSION['role'] = $user_row['role'];
-            header('Location: /');
+            header('Location: /app/');
             exit;
         } else {
             $login_error = 'Username atau password salah.';

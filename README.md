@@ -259,7 +259,7 @@ docker compose restart
 - Database port `3306` **hanya** exposed di internal Docker network
 - Credentials disimpan di GitHub Secrets & `.env` file (tidak di-commit)
 - SSH key EC2 hanya ada di GitHub Secrets
-- Password di-hash menggunakan `password_hash()` PHP (bcrypt)
+- Password di-hash menggunakan MD5 (sesuai implementasi database seed dan autentikasi PHP)
 
 ---
 
