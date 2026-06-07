@@ -185,7 +185,7 @@
 
 <div class="hero-banner">
   <div class="hero-content">
-    <h1 class="hero-title">Gunung News</h1>
+    <h1 class="hero-title">Gunung Hakim</h1>
     <p class="hero-subtitle">Portal Informasi Terpercaya Seputar Pendakian, Eksplorasi Alam, dan Vulkanologi Indonesia</p>
   </div>
 </div>
