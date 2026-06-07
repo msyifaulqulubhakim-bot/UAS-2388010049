@@ -15,10 +15,10 @@ CREATE TABLE IF NOT EXISTS users (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Seed data (password di-hash dengan PHP password_hash bcrypt)
--- admin123  -> hash
--- user123   -> hash
+-- Seed data (MD5)
+-- admin123  -> MD5
+-- user123   -> MD5
 INSERT INTO users (username, password, role) VALUES
-  ('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin'),
-  ('user1', '$2y$10$TKh8H1.PfbuNi73AdLnrV.855.ohVX.mSBEa6VGNvQ3F7F5xV.tAm', 'user'),
-  ('user2', '$2y$10$TKh8H1.PfbuNi73AdLnrV.855.ohVX.mSBEa6VGNvQ3F7F5xV.tAm', 'user');
+  ('admin', MD5('admin123'), 'admin'),
+  ('user1', MD5('user123'), 'user'),
+  ('user2', MD5('user123'), 'user');

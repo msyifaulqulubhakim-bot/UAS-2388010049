@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         $stmt->execute([$username]);
         $user_row = $stmt->fetch();
 
-        if ($user_row && password_verify($password, $user_row['password'])) {
+        if ($user_row && md5($password) === $user_row['password']) {
             $_SESSION['user'] = $user_row['username'];
             $_SESSION['role'] = $user_row['role'];
             header('Location: /');
@@ -113,196 +113,77 @@ if ($logged_in && $pdo) {
       height: 2px;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
     }
-    .login-logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.5rem;
-      margin-bottom: 0.25rem;
-    }
+    .login-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; margin-bottom: 0.25rem; }
     .login-logo span { color: var(--accent); }
     .login-sub { color: var(--muted); font-size: 0.75rem; margin-bottom: 2rem; }
     .form-group { margin-bottom: 1rem; }
     label { display: block; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
     input[type=text], input[type=password] {
-      width: 100%;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 0.65rem 0.85rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.85rem;
-      outline: none;
-      transition: border-color 0.2s;
+      width: 100%; background: var(--bg); border: 1px solid var(--border);
+      color: var(--text); padding: 0.65rem 0.85rem;
+      font-family: 'DM Mono', monospace; font-size: 0.85rem; outline: none; transition: border-color 0.2s;
     }
     input:focus { border-color: var(--accent); }
     .btn {
-      display: block;
-      width: 100%;
-      padding: 0.75rem;
-      background: var(--accent);
-      color: #000;
-      border: none;
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.05em;
-      cursor: pointer;
-      transition: opacity 0.2s;
-      margin-top: 1.5rem;
-      text-transform: uppercase;
+      display: block; width: 100%; padding: 0.75rem;
+      background: var(--accent); color: #000; border: none;
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem;
+      letter-spacing: 0.05em; cursor: pointer; transition: opacity 0.2s;
+      margin-top: 1.5rem; text-transform: uppercase;
     }
     .btn:hover { opacity: 0.85; }
     .error-msg {
-      background: rgba(248,113,113,0.1);
-      border: 1px solid rgba(248,113,113,0.3);
-      color: var(--red);
-      padding: 0.6rem 0.85rem;
-      font-size: 0.75rem;
-      margin-top: 1rem;
+      background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.3);
+      color: var(--red); padding: 0.6rem 0.85rem; font-size: 0.75rem; margin-top: 1rem;
     }
     .hint { color: var(--muted); font-size: 0.7rem; margin-top: 1.5rem; text-align: center; }
     .hint strong { color: var(--accent2); }
 
     /* ===== DASHBOARD ===== */
     .navbar {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 0 2rem; height: 56px; display: flex; align-items: center;
+      justify-content: space-between; position: sticky; top: 0; z-index: 10;
     }
-    .nav-brand {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1rem;
-    }
+    .nav-brand { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; }
     .nav-brand span { color: var(--accent); }
     .nav-right { display: flex; align-items: center; gap: 1.5rem; font-size: 0.75rem; }
-    .badge {
-      background: var(--accent2);
-      color: #000;
-      padding: 0.15rem 0.5rem;
-      font-size: 0.6rem;
-      font-weight: bold;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-    .logout-btn {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.75rem;
-      border: 1px solid var(--border);
-      padding: 0.35rem 0.75rem;
-      transition: all 0.2s;
-    }
+    .badge { background: var(--accent2); color: #000; padding: 0.15rem 0.5rem; font-size: 0.6rem; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; }
+    .logout-btn { color: var(--muted); text-decoration: none; font-size: 0.75rem; border: 1px solid var(--border); padding: 0.35rem 0.75rem; transition: all 0.2s; }
     .logout-btn:hover { color: var(--red); border-color: var(--red); }
-
     .main { max-width: 960px; margin: 0 auto; padding: 2.5rem 2rem; }
-
-    .page-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.75rem;
-      font-weight: 800;
-      margin-bottom: 0.25rem;
-    }
+    .page-title { font-family: 'Syne', sans-serif; font-size: 1.75rem; font-weight: 800; margin-bottom: 0.25rem; }
     .page-sub { color: var(--muted); font-size: 0.8rem; margin-bottom: 2rem; }
-
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .stat-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 1.25rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .stat-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-    }
+    .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .stat-card { background: var(--card); border: 1px solid var(--border); padding: 1.25rem; position: relative; overflow: hidden; }
+    .stat-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; }
     .stat-card.blue::after { background: var(--accent); }
     .stat-card.purple::after { background: var(--accent2); }
     .stat-card.green::after { background: var(--green); }
-    .stat-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      line-height: 1;
-      margin-bottom: 0.25rem;
-    }
+    .stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; line-height: 1; margin-bottom: 0.25rem; }
     .stat-label { color: var(--muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; }
-
-    .section-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
-    .table-wrap {
-      background: var(--card);
-      border: 1px solid var(--border);
-      overflow: hidden;
-    }
+    .section-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.75rem; }
+    .table-wrap { background: var(--card); border: 1px solid var(--border); overflow: hidden; }
     table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
     thead { background: var(--surface); }
     th { text-align: left; padding: 0.75rem 1rem; color: var(--muted); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; }
     td { padding: 0.75rem 1rem; border-top: 1px solid var(--border); }
     tr:hover td { background: rgba(255,255,255,0.02); }
-    .role-badge {
-      display: inline-block;
-      padding: 0.15rem 0.5rem;
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
+    .role-badge { display: inline-block; padding: 0.15rem 0.5rem; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
     .role-admin { background: rgba(129,140,248,0.15); color: var(--accent2); border: 1px solid rgba(129,140,248,0.3); }
-    .role-user  { background: rgba(56,189,248,0.1);  color: var(--accent);  border: 1px solid rgba(56,189,248,0.3);  }
-
-    .db-error {
-      background: rgba(248,113,113,0.08);
-      border: 1px solid rgba(248,113,113,0.25);
-      padding: 1rem 1.25rem;
-      color: var(--red);
-      font-size: 0.78rem;
-      margin-bottom: 1.5rem;
-    }
-    .server-info {
-      margin-top: 2rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 1.25rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.5rem;
-    }
+    .role-user  { background: rgba(56,189,248,0.1);  color: var(--accent);  border: 1px solid rgba(56,189,248,0.3); }
+    .db-error { background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.25); padding: 1rem 1.25rem; color: var(--red); font-size: 0.78rem; margin-bottom: 1.5rem; }
+    .server-info { margin-top: 2rem; background: var(--card); border: 1px solid var(--border); padding: 1.25rem; font-size: 0.75rem; color: var(--muted); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; }
     .server-info span { color: var(--text); }
   </style>
 </head>
 <body>
 
 <?php if (!$logged_in): ?>
-<!-- ===== LOGIN PAGE ===== -->
 <div class="login-wrap">
   <div class="login-box">
     <div class="login-logo">Web<span>Dinamis</span></div>
     <div class="login-sub">PHP + MariaDB · Docker · CI/CD</div>
-
     <form method="POST">
       <input type="hidden" name="action" value="login"/>
       <div class="form-group">
@@ -318,13 +199,11 @@ if ($logged_in && $pdo) {
         <div class="error-msg"><?= htmlspecialchars($login_error) ?></div>
       <?php endif; ?>
     </form>
-
     <div class="hint">Demo: <strong>admin</strong> / <strong>admin123</strong> &nbsp;|&nbsp; <strong>user1</strong> / <strong>user123</strong></div>
   </div>
 </div>
 
 <?php else: ?>
-<!-- ===== DASHBOARD ===== -->
 <nav class="navbar">
   <div class="nav-brand">Web<span>Dinamis</span></div>
   <div class="nav-right">
@@ -342,34 +221,18 @@ if ($logged_in && $pdo) {
   <?php endif; ?>
 
   <div class="stats-row">
-    <div class="stat-card blue">
-      <div class="stat-num"><?= count($users_data) ?></div>
-      <div class="stat-label">Total Users</div>
-    </div>
-    <div class="stat-card purple">
-      <div class="stat-num"><?= $stats['admins'] ?></div>
-      <div class="stat-label">Admins</div>
-    </div>
-    <div class="stat-card green">
-      <div class="stat-num"><?= $stats['users'] ?></div>
-      <div class="stat-label">Regular Users</div>
-    </div>
+    <div class="stat-card blue"><div class="stat-num"><?= count($users_data) ?></div><div class="stat-label">Total Users</div></div>
+    <div class="stat-card purple"><div class="stat-num"><?= $stats['admins'] ?></div><div class="stat-label">Admins</div></div>
+    <div class="stat-card green"><div class="stat-num"><?= $stats['users'] ?></div><div class="stat-label">Regular Users</div></div>
   </div>
 
   <div class="section-title">Daftar User</div>
   <div class="table-wrap">
     <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Username</th>
-          <th>Role</th>
-          <th>Dibuat</th>
-        </tr>
-      </thead>
+      <thead><tr><th>#</th><th>Username</th><th>Role</th><th>Dibuat</th></tr></thead>
       <tbody>
         <?php if (empty($users_data)): ?>
-          <tr><td colspan="4" style="color:var(--muted);text-align:center;padding:2rem">Tidak ada data. Database belum ter-seed?</td></tr>
+          <tr><td colspan="4" style="color:var(--muted);text-align:center;padding:2rem">Tidak ada data.</td></tr>
         <?php else: ?>
           <?php foreach ($users_data as $u): ?>
           <tr>
