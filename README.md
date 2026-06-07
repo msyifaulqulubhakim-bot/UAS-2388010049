@@ -218,14 +218,88 @@ on:
 
 ## 📸 Bukti Screenshot
 
-> *(Tambahkan screenshot setelah deployment)*
+### 1. AWS EC2 Instance — Running ✅
 
-- [ ] Screenshot GitHub Actions — pipeline hijau ✅
-- [ ] Screenshot Docker Hub — image ter-push ✅
-- [ ] Screenshot browser — `http://13.251.225.181` (web statis) ✅
-- [ ] Screenshot browser — `http://13.251.225.181/app` (login PHP) ✅
-- [ ] Screenshot `docker compose ps` di EC2 ✅
-- [ ] Screenshot Live Test — commit → pipeline → perubahan di browser ✅
+Instance **UAS_2388010049** berjalan dengan status `Running` pada region `ap-southeast-1a`.
+
+![EC2 Instances](docs/screenshots/ec2_instance.png)
+
+---
+
+### 2. GitHub Actions Secrets — Configured ✅
+
+Seluruh secrets yang diperlukan telah dikonfigurasi di repository GitHub:
+`AWS_HOST`, `AWS_PRIVATE_KEY`, `AWS_USERNAME`, `DB_PASS`, `DOCKERHUB_TOKEN`, `DOCKERHUB_USERNAME`, `MYSQL_ROOT_PASSWORD`.
+
+![GitHub Secrets](docs/screenshots/github_secrets.png)
+
+---
+
+### 3. Docker Hub — Image Ter-Push ✅
+
+Repository `hakim0901/web_statis` dan `hakim0901/web_dinamis` berhasil di-push oleh GitHub Actions pipeline.
+
+![Docker Hub Repositories](docs/screenshots/dockerhub_repos.png)
+
+---
+
+### 4. Docker Hub — Personal Access Token ✅
+
+Token akses `uas_2388010049` (Read & Write) berhasil dibuat dan digunakan sebagai secret `DOCKERHUB_TOKEN`.
+
+![Docker Hub Token](docs/screenshots/dockerhub_token.png)
+
+---
+
+### 5. Instalasi Docker di EC2 ✅
+
+Docker v29.5.3 dan Docker Compose v5.1.4 berhasil terinstal di instance EC2.
+
+![Docker Install](docs/screenshots/docker_install.png)
+
+---
+
+### 6. Web Statis (CV) — Port 80 ✅
+
+Dapat diakses di: `http://13.251.225.181`
+
+![Web Statis](docs/screenshots/web_statis.png)
+
+---
+
+### 7. Web Dinamis (Gunung News MVC) — Port 3000 ✅
+
+Dapat diakses di: `http://13.251.225.181:3000`
+
+![Web Dinamis](docs/screenshots/web_dinamis.png)
+
+---
+
+### 8. GitHub Actions Pipeline — Green ✅
+
+Pipeline CI/CD untuk `web_statis` dan `web_dinamis` berhasil berjalan (Build → Push → Deploy).
+
+![GitHub Actions](docs/screenshots/github_actions.png)
+
+---
+
+### 9. Docker Compose PS — Semua Container Up ✅
+
+Semua container (`nginx_proxy`, `web_statis`, `web_dinamis`, `mariadb`) berjalan normal.
+
+![Docker Compose PS](docs/screenshots/docker_compose_ps.png)
+
+---
+
+### 10. Live Test — Zero-Touch Deployment ✅
+
+Perubahan kode lokal → `git push` → GitHub Actions → EC2 updated otomatis tanpa intervensi manual.
+
+![Live Test](docs/screenshots/live_test.png)
+
+---
+
+> **Catatan**: Kirimkan file screenshot ke folder `docs/screenshots/` dengan nama file yang sesuai, atau lampirkan langsung ke laporan PDF.
 
 ---
 
