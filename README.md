@@ -1,6 +1,6 @@
 # UAS-2388010049 — Administrasi Server (Cloud Computing II)
 
-> **Nama**: M. Syifaulqulub Hakim  
+> **Nama**: Muhammad Syifaulqulub Hakim  
 > **NIM**: 2388010049  
 > **Dosen**: Mohamad Firdaus, M.Kom.  
 > **Mata Kuliah**: Administrasi Server (Cloud Computing II)
@@ -263,4 +263,4 @@ docker compose restart
 
 ---
 
-*Dibuat untuk UAS Administrasi Server — UIN Sunan Gunung Djati Bandung, 2025*
+*Dibuat untuk UAS Administrasi Server*
