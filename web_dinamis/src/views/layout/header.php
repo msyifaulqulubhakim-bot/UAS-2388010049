@@ -167,7 +167,7 @@
     <div class="nav-menu">
       <a href="/" class="nav-link <?= !isset($_GET['route']) || $_GET['route'] === 'home' ? 'active' : '' ?>">Beranda</a>
       <?php if (isset($_SESSION['user']) && $_SESSION['role'] === 'admin'): ?>
-        <a href="/?route=admin" class="nav-link <?= $_GET['route'] === 'admin' ? 'active' : '' ?>">Dashboard Admin</a>
+        <a href="/?route=admin" class="nav-link <?= (isset($_GET['route']) && $_GET['route'] === 'admin') ? 'active' : '' ?>">Dashboard Admin</a>
       <?php endif; ?>
 
       <?php if (isset($_SESSION['user'])): ?>
