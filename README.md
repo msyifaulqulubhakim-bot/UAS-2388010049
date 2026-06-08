@@ -32,8 +32,9 @@
 9. [Automasi Database (MariaDB Seeding)](#-automasi-database-mariadb-seeding)
 10. [Konfigurasi GitHub Secrets](#-konfigurasi-github-secrets)
 11. [Bukti Screenshot & Live Test](#-bukti-screenshot--live-test)
-12. [Cara Menjalankan Lokal](#-cara-menjalankan-lokal)
-13. [Akses Aplikasi Produksi (AWS)](#-akses-aplikasi-produksi-aws)
+12. [Docker Engine Status di EC2](#12-docker-engine--status-aktif-di-ec2-systemctl)
+13. [Cara Menjalankan Lokal](#-cara-menjalankan-lokal)
+14. [Akses Aplikasi Produksi (AWS)](#-akses-aplikasi-produksi-aws)
 
 ---
 
@@ -555,6 +556,33 @@ Semua credential sensitif disimpan di **GitHub Repository Secrets** (Settings �
 > ✅ MariaDB berstatus **(healthy)** — healthcheck berhasil.  
 > ✅ Nginx mengekspose port `80` dan `3000` ke publik.  
 > ✅ `web_dinamis` dan `web_statis` hanya internal (tidak ekspose langsung).
+
+---
+
+### 12. Docker Engine — Status Aktif di EC2 (systemctl)
+
+![Docker Engine Status EC2](./image-11.png)
+
+> Verifikasi Docker Engine berjalan di EC2 instance (`i-0079d7f7226c05277`, Public IP: `13.251.225.181`) via **SSH AWS Connect**:
+>
+> ```
+> ubuntu@ip-172-31-37-189:~$ sudo systemctl status docker
+> ```
+>
+> | Properti | Nilai |
+> |---|---|
+> | **Service** | `docker.service` — Docker Application Container Engine |
+> | **Status** | `active (running)` ✅ |
+> | **Aktif Sejak** | Mon 2026-06-08 01:47:35 UTC |
+> | **Registry** | `https://index.docker.io/v1/` |
+> | **Main PID** | `852 (dockerd)` |
+> | **Memory** | `76.7M` (peak: 135.8M) |
+> | **Tasks** | `44` |
+> | **CPU** | `12.546s` |
+>
+> ✅ Docker Engine **v29.0.3** terinstall dan berjalan otomatis saat boot (`enabled; preset: enabled`).  
+> ✅ Docker Proxy aktif memetakan port container ke host (port `80`, `3000`, `5000`).  
+> ✅ Instance terhubung ke Docker Hub registry untuk pull/push image.
 
 ---
 

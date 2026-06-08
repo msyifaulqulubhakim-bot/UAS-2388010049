@@ -27,7 +27,7 @@
 <footer>
   <div class="footer-container">
     <div class="footer-left">
-      © 2026 <span>GunungNews</span>. Dibuat untuk UAS Administrasi Server (Cloud Computing II).
+      © 2026 <span>Muhammad Syifaulqulub Hakim | 2388010049 | GunungNews</span>. Dibuat untuk UAS Administrasi Server (Cloud Computing II).
     </div>
     <div class="footer-right">
       IP EC2: <span>13.251.225.181</span> | Port: <span>3000</span> (Dynamic MVC)
